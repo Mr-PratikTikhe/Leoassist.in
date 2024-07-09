@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Login and Signup Form</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/login.css">
+                
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
+                <header>Login</header>
+                <form id="loginForm" onsubmit="return false;">
+                    <div class="field input-field">
+                        <input type="email" id="loginEmail" placeholder="Email" class="input">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" id="loginPassword" placeholder="Password" class="password">
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+
+                    <div class="form-link">
+                        <a href="#" class="forgot-pass">Forgot password?</a>
+                    </div>
+
+                    <div class="field button-field">
+                        <button onclick="loginAndRedirect()">Login</button>
+                    </div>
+
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook facebook-icon'></i>
+                    <span>Login with Facebook</span>
+                </a>
+            </div>
+
+            <div class="media-options">
+                <a href="#" onclick="loginWithGoogle()" class="field google">
+                    <img src="images/google.png" alt="" class="google-img">
+                    <span>Login with Google</span>
+                </a>
+            </div>
+        </div>
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Responsive Login and Signup Form</title>
+        
+            <!-- CSS -->
+            <link rel="stylesheet" href="css/login.css">
+                        
+            <!-- Boxicons CSS -->
+            <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        </head>
+        <body>
+            <section class="container forms">
+                <!-- Signup Form -->
+                <div class="form signup">
+                    <div class="form-content">
+                        <header>Signup</header>
+                        <form id="signupForm" onsubmit="return false;">
+                            <div class="field input-field">
+                                <input type="email" id="signupEmail" placeholder="Email" class="input">
+                            </div>
+        
+                            <div class="field input-field">
+                                <input type="password" id="signupPassword" placeholder="Create password" class="password">
+                            </div>
+        
+                            <div class="field input-field">
+                                <input type="password" id="confirmPassword" placeholder="Confirm password" class="password">
+                                <i class='bx bx-hide eye-icon'></i>
+                            </div>
+        
+                            <div id="termsAgreement" style="display: none;">
+                                <label>
+                                    <input type="checkbox" id="agreeTerms">
+                                    I agree to the <a href="/Login_Signup_Form/terms and condition/term.html" onclick="showTerms()">Terms and Conditions</a>
+                                </label>
+                            </div>
+        
+                            <div class="field button-field">
+                                <button onclick="signup()">Signup</button>
+                            </div>
+                        </form>
+        
+                        <div id="termsContent" style="display: none;">
+                            <h3>Terms and Conditions</h3>
+                            <p>Here are the terms and conditions...</p>
+                            <button onclick="acceptTerms()">Accept and Signup</button>
+                        </div>
+        
+                        <div class="form-link">
+                            <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                        </div>
+                    </div>
+        
+                    <div class="line"></div>
+        
+                    <div class="media-options">
+                        <a href="#" class="field facebook">
+                            <i class='bx bxl-facebook facebook-icon'></i>
+                            <span>Login with Facebook</span>
+                        </a>
+                    </div>
+        
+                    <div class="media-options">
+                        <a href="#" class="field google">
+                            <img src="images/google.png" alt="" class="google-img">
+                            <span>Login with Google</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- JavaScript -->
+            <script src="js/login.js"></script>
+            <script>
+                function signup() {
+                    const email = document.getElementById('signupEmail').value;
+                    const password = document.getElementById('signupPassword').value;
+                    const confirmPassword = document.getElementById('confirmPassword').value;
+        
+                    // Perform basic validation
+                    if (!email || !password || !confirmPassword) {
+                        alert('Please fill all fields.');
+                        return;
+                    }
+        
+                    if (password !== confirmPassword) {
+                        alert('Passwords do not match.');
+                        return;
+                    }
+        
+                    // Show terms agreement section
+                    document.getElementById('termsAgreement').style.display = 'block';
+                }
+        
+                function showTerms() {
+                    document.getElementById('termsContent').style.display = 'block';
+                }
+        
+                function acceptTerms() {
+                    // Perform signup process after terms acceptance
+                    const agreed = document.getElementById('agreeTerms').checked;
+        
+                    if (agreed) {
+                        alert('Signup successful!');
+                        // Redirect to another page or perform other actions
+                        window.location.href = '/homepage/home.html'; // Replace with your actual page URL
+                    } else {
+                        alert('Please agree to the terms and conditions.');
+                    }
+                }
+            </script>
+        </body>
+        </html>
+        
+    <!-- JavaScript -->
+    <script src="js/login.js"></script>
+    <script>
+        function login() {
+            // Simulated login with a fake user
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Validate credentials (simulate a backend check)
+            if (email === 'fakeuser@example.com' && password === 'password') {
+                alert('Login successful!');
+                // Redirect to another page or perform other actions
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        }
+
+        function loginWithGoogle() {
+            // Simulated login with Google
+            // This could involve redirecting to Google's authentication service
+            // For this example, we will simulate a successful login
+            alert('Simulated login with Google successful!');
+            // Redirect to another page or perform other actions
+        }
+    </script>
+</body>
+</html>

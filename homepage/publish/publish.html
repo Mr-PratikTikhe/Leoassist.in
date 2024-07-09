@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="publish.css">
+</head>
+<body>
+    <div class="post-creation">
+        <h2>Create Post</h2>
+        <form id="postForm">
+            <textarea id="postContent" placeholder="Write your idea here..."></textarea>
+            <input type="file" id="mediaUpload" accept="image/*, .pdf, .docx">
+            <div id="uploadedFile" class="uploaded-file"></div>
+            <button type="submit" id="publishBtn">Publish</button>
+        </form>
+    </div>
+    <script src="publish.js"></script>
+</body>
+</html>
